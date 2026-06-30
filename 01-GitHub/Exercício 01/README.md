@@ -213,11 +213,11 @@ Este conteúdo fica oculto até o usuário clicar.
 
 GitHub:
 
-https://github.com/seuusuario
+https://github.com/Suzianeribeirocode
 
 LinkedIn:
 
-https://linkedin.com/in/seuusuario
+https://linkedin.com/in/Suzianeribeiro
 
 ---
 
