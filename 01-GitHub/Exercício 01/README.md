@@ -216,9 +216,7 @@ GitHub:
 https://github.com/Suzianeribeirocode
 
 LinkedIn:
-
-https://linkedin.com/in/Suzianeribeiro
-
+https://www.linkedin.com/in/suziane-ribeiro-245577325/
 ---
 
 ⭐ Obrigado por visitar este projeto!
