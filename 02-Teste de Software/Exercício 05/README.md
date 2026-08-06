@@ -1,71 +1,51 @@
-# Atividade Avaliativa — Análise de Relatório de Teste de Performance
-
-> **Observação:** Como o relatório de teste não foi fornecido, as respostas abaixo consideram um cenário típico em que o sistema apresenta problemas de desempenho.
-
----
+# Respostas Testes de Performance
 
 ## 1. O sistema pode ser considerado aprovado?
 
-**Resposta:** Não.
-
-**Justificativa:** O sistema não pode ser considerado aprovado quando apresenta tempos de resposta elevados, aumento na taxa de erros ou instabilidade durante o teste. Esses fatores indicam que a aplicação não atende aos requisitos mínimos de desempenho e experiência do usuário.
+Depende dos resultados apresentados no relatório. Se os tempos de resposta estiverem dentro do esperado, a taxa de erros for baixa ou inexistente e o sistema permanecer estável durante o teste, ele pode ser considerado aprovado. Caso contrário, não.
 
 ---
 
 ## 2. Quais métricas indicam problemas de performance?
 
-As principais métricas que evidenciam problemas são:
+As principais métricas são:
 
-- **Tempo de resposta (Response Time):** elevado ou acima do limite esperado.
-- **Taxa de erros (Error Rate):** presença de requisições com falha (4xx, 5xx ou timeouts).
-- **Throughput:** quantidade de requisições processadas menor que o esperado.
-- **Tempo de resposta máximo (Max Response Time):** muito superior à média, indicando lentidão em alguns momentos.
-- **Uso de CPU:** utilização próxima de 100%, indicando sobrecarga do servidor.
-- **Uso de memória (RAM):** consumo excessivo ou crescimento contínuo, podendo indicar vazamento de memória.
-- **Tempo de resposta nos percentis (P95/P99):** usuários experimentando tempos de resposta muito altos.
+- Tempo de resposta elevado.
+- Alta taxa de erros (timeouts ou falhas nas requisições).
+- Throughput abaixo do esperado.
+- Alto consumo de CPU e memória.
+- Tempo de resposta elevado nos percentis (P95 e P99).
 
 ---
 
 ## 3. Quais possíveis gargalos podem existir?
 
-Os gargalos podem estar relacionados a:
+Possíveis gargalos incluem:
 
 - Consultas lentas ao banco de dados.
-- Falta de índices nas tabelas.
-- Recursos insuficientes de CPU ou memória.
-- Alto número de acessos simultâneos.
-- Problemas de rede ou alta latência.
 - Código da aplicação pouco otimizado.
-- Chamadas excessivas para APIs ou serviços externos.
-- Configuração inadequada do servidor ou do banco de dados.
+- Servidor com poucos recursos (CPU ou memória).
+- Problemas de rede.
+- Excesso de usuários simultâneos.
+- Chamadas lentas para APIs ou serviços externos.
 
 ---
 
 ## 4. Esse cenário se aproxima mais de Carga, Stress ou Capacidade?
 
-**Resposta:** Teste de **Carga**.
+Se o sistema foi avaliado com a quantidade de usuários prevista para uso normal, trata-se de um **Teste de Carga**.
 
-**Justificativa:** O objetivo é avaliar o comportamento do sistema sob uma quantidade esperada de usuários ou requisições, verificando se ele mantém desempenho adequado durante o uso normal.
-
-> Caso o relatório mostrasse falhas ao ultrapassar o limite esperado de usuários, seria um **Teste de Stress**. Se o objetivo fosse descobrir o número máximo de usuários suportados, seria um **Teste de Capacidade**.
+Caso o objetivo fosse ultrapassar os limites do sistema até ocorrer falha, seria um **Teste de Stress**. Se a finalidade fosse descobrir o número máximo de usuários suportados, seria um **Teste de Capacidade**.
 
 ---
 
 ## 5. O que você recomendaria ao time técnico?
 
-As principais recomendações são:
+Recomendaria:
 
 - Otimizar consultas ao banco de dados.
-- Revisar e otimizar trechos de código com maior tempo de execução.
-- Implementar cache para reduzir consultas repetitivas.
-- Monitorar continuamente CPU, memória, disco e rede.
-- Ajustar a infraestrutura (escalabilidade vertical ou horizontal).
-- Configurar balanceamento de carga, se necessário.
-- Corrigir erros identificados durante o teste.
-- Executar novos testes de performance após cada otimização para validar as melhorias.
-
----
-
-# Conclusão
-
-Com base na análise, o sistema **não seria considerado aprovado** caso apresente alta latência, erros frequentes e queda de desempenho sob carga. As métricas de tempo de resposta, throughput, taxa de erros e consumo de recursos são fundamentais para identificar gargalos e direcionar as otimizações. Nesse cenário, o teste se caracteriza principalmente como um **Teste de Carga**, e recomenda-se ao time técnico realizar otimizações na aplicação, banco de dados e infraestrutura antes de uma nova validação.
+- Melhorar o desempenho do código da aplicação.
+- Monitorar CPU, memória e rede.
+- Utilizar cache quando possível.
+- Ajustar a infraestrutura para suportar maior carga.
+- Executar novos testes após as melhorias para validar os resultados.
