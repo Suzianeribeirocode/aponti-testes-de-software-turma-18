@@ -4,9 +4,9 @@ import { aguardar } from "../../utils/Helpers";
 function simularlogin (usuario:string, senha:string):Promise<string>{
     return new Promise((resolve,reject)=>{
         if(usuario === 'admin' && senha == '123456'){
-            resolve('token-secreto-aprovdo');
+            resolve('token-secreto-aprovado');
         } else{
-            reject('ERRO 481 - USUARIO OU SENHA INVÁLIDOS! ❌');
+            reject('ERRO 401 - USUARIO OU SENHA INVÁLIDOS! ❌');
 
         }
     })
@@ -22,11 +22,11 @@ async function executarCT(){
     
     const token = await simularlogin('admin','123456');
      console.log(`SUCESSO! USUARIO LOGADO TOKEN RECEBBIDO: ${token}`)
-    }catch(erro){
+    } catch(erro) {
         console.error(`FALHA NO TESTE: ${erro}`);
-    }finally{
+    } finally {
         console.log(`Passo final: Fechando navegador e limpando dados.`);
     }
 }
-,
+
 executarCT();
